@@ -5,7 +5,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   BaseEntity,
+  OneToMany,
 } from "typeorm";
+import { Equipment } from "./equipment.entity";
 
 @Entity({ name: "user" }) /// we can set up the name of the table, otherwise, type orm will assign a similar name than the class name
 export class User extends BaseEntity {
@@ -33,4 +35,7 @@ export class User extends BaseEntity {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Equipment, (equip) => equip.user)
+  equipment: Equipment[]
 }
