@@ -5,7 +5,10 @@ import { responseFactory } from "../shared/response-factory";
 export async function getUser(context: Context, req: HttpRequest) {
   try {
     const { id } = req.params;
-    const foundUser = await User.findOneBy({ id: parseInt(id) });
+    const foundUser = await User.findOne({
+      where: { id: parseInt(id) },
+      relations: ["equipment"],
+    });
     if (!foundUser) {
       context.res = responseFactory({ message: "User not found" }, 404);
     } else {
