@@ -1,0 +1,13 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+      "AzureWebJobsStorage": "",
+      "FUNCTIONS_WORKER_RUNTIME": "node",
+      "DB_HOST": "",
+      "DB_DATABASE": "",
+      "DB_PORT": "",
+      "DB_USER": "",
+      "DB_PASSWORD": "",
+      "AzureWebJobs.create_user.Disabled": "true"
+    }
+  }
